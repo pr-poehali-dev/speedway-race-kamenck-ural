@@ -86,7 +86,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-accent/20"></div>
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/6df9a87a-959a-4aba-a7cc-5384f4a6a275/files/65acc69e-b7ea-412f-b888-11d511146e3d.jpg)' }}
+          style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/6df9a87a-959a-4aba-a7cc-5384f4a6a275/files/369bce0a-625b-4b29-9cd0-775f6a396125.jpg)' }}
         ></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(14,165,233,0.1),transparent_50%)]"></div>
         
@@ -329,9 +329,12 @@ const Index = () => {
             {activeTab === 'photos' && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
                 {[
-                  'https://cdn.poehali.dev/projects/6df9a87a-959a-4aba-a7cc-5384f4a6a275/files/65acc69e-b7ea-412f-b888-11d511146e3d.jpg',
-                  'https://cdn.poehali.dev/projects/6df9a87a-959a-4aba-a7cc-5384f4a6a275/files/cc5570f6-99c3-4c1d-ace6-10f264efdca5.jpg',
-                  'https://cdn.poehali.dev/projects/6df9a87a-959a-4aba-a7cc-5384f4a6a275/files/c957e6ad-b3dc-495c-9dcb-01b751aa2c51.jpg'
+                  'https://cdn.poehali.dev/projects/6df9a87a-959a-4aba-a7cc-5384f4a6a275/files/369bce0a-625b-4b29-9cd0-775f6a396125.jpg',
+                  'https://cdn.poehali.dev/projects/6df9a87a-959a-4aba-a7cc-5384f4a6a275/files/33f414e6-db45-42e0-a081-2ca9756c200a.jpg',
+                  'https://cdn.poehali.dev/projects/6df9a87a-959a-4aba-a7cc-5384f4a6a275/files/9083271d-37d3-467e-9835-948a35e9232a.jpg',
+                  'https://cdn.poehali.dev/projects/6df9a87a-959a-4aba-a7cc-5384f4a6a275/files/4ddd0dbe-6c10-43a6-991f-b54fabc61552.jpg',
+                  'https://cdn.poehali.dev/projects/6df9a87a-959a-4aba-a7cc-5384f4a6a275/files/95c27d80-56e1-4286-a629-0705bd035ab9.jpg',
+                  'https://cdn.poehali.dev/projects/6df9a87a-959a-4aba-a7cc-5384f4a6a275/files/1bfb9db3-38b9-4c44-89f3-cd0eb91ba7f8.jpg'
                 ].map((img, index) => (
                   <Card key={index} className="overflow-hidden group cursor-pointer hover:scale-105 transition-transform">
                     <div 
