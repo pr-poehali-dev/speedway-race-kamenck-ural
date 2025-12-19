@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [liveStatus, setLiveStatus] = useState(false);
+  const [activeTab, setActiveTab] = useState<'photos' | 'videos'>('photos');
 
   useEffect(() => {
     const targetDate = new Date('2024-12-20T10:00:00').getTime();
@@ -304,20 +304,30 @@ const Index = () => {
             Фото и видео
           </h2>
           
-          <Tabs defaultValue="photos" className="max-w-6xl mx-auto">
-            <TabsList className="grid w-full grid-cols-2 mb-8">
-              <TabsTrigger value="photos" className="text-lg">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex justify-center gap-2 mb-8">
+              <Button 
+                size="lg"
+                variant={activeTab === 'photos' ? 'default' : 'outline'}
+                onClick={() => setActiveTab('photos')}
+                className={activeTab === 'photos' ? 'bg-primary' : 'border-primary/50'}
+              >
                 <Icon name="Image" size={20} className="mr-2" />
                 Фотографии
-              </TabsTrigger>
-              <TabsTrigger value="videos" className="text-lg">
+              </Button>
+              <Button 
+                size="lg"
+                variant={activeTab === 'videos' ? 'default' : 'outline'}
+                onClick={() => setActiveTab('videos')}
+                className={activeTab === 'videos' ? 'bg-primary' : 'border-primary/50'}
+              >
                 <Icon name="Video" size={20} className="mr-2" />
                 Видео
-              </TabsTrigger>
-            </TabsList>
+              </Button>
+            </div>
             
-            <TabsContent value="photos">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {activeTab === 'photos' && (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
                 {[
                   'https://cdn.poehali.dev/projects/6df9a87a-959a-4aba-a7cc-5384f4a6a275/files/65acc69e-b7ea-412f-b888-11d511146e3d.jpg',
                   'https://cdn.poehali.dev/projects/6df9a87a-959a-4aba-a7cc-5384f4a6a275/files/cc5570f6-99c3-4c1d-ace6-10f264efdca5.jpg',
@@ -331,10 +341,10 @@ const Index = () => {
                   </Card>
                 ))}
               </div>
-            </TabsContent>
+            )}
             
-            <TabsContent value="videos">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {activeTab === 'videos' && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in">
                 {[1, 2, 3, 4].map((item) => (
                   <Card key={item} className="overflow-hidden group cursor-pointer hover:scale-105 transition-transform">
                     <div className="aspect-video bg-gradient-to-br from-secondary/20 to-primary/20 flex items-center justify-center">
@@ -343,8 +353,8 @@ const Index = () => {
                   </Card>
                 ))}
               </div>
-            </TabsContent>
-          </Tabs>
+            )}
+          </div>
         </div>
       </section>
 
